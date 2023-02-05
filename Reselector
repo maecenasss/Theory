@@ -1,0 +1,19 @@
+Reselector - біліотека для вибірки елементів у разі їх зміни в стейті.
+yarn add reselector
+приймає в себе прості селектори і виводить змінені елементи після їх зміни в стейті
+Приклад:
+const getUsersSimpleSelector = (state) => {
+    return state.usersPage.users; 
+}
+//selector from reselect. Селектро із бібліотеки реселект приймає декілька селектрорів і склідкує за змінами в стейті. Включається лише коли відбуваються зміни 
+export const getUsers = createSelector ( getUsersSimpleSelector, 
+    (users) => {
+    return users
+})
+поміт поміщається в UsersContainer
+
+let mapStateToProps = (state) => {
+    return {
+        //create users pages
+        users: getUsers (state),
+        pageSize: getPageSize (state),
