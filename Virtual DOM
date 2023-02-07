@@ -1,0 +1,12 @@
+Component (class&functional) take props & return jsx
+Jsx with react help send to Virtual DOM & then became html
+Virtual DOM -містить в собі проміжні об'єкти, а потім на їх основі реакт створює об'єкти, що відрисовуються в html
+Reconciliation - процес порівняння проміжних об'єктів в Virtual DOM і обновлення їх у разі розбіжностей за домопогою реакта
+Приклад переміщення jsx об'єкта із компоненти у віртуал дом: 
+компонента: const IT = (props) => {
+            return <div>HELLO</div>
+}
+за допомогою реакт і babel jsx перетворюється в js і переходить у Virtual DOM:
+let IT = function IT (porps) {
+return React.createElement ('div', null, 'Hello')
+}
