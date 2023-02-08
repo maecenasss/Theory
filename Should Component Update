@@ -1,0 +1,9 @@
+//shoudComponentUpdate - метод визначення нових props & state і заміни старих
+
+class MyPosts extends Component {
+shoudComponentUpdate (nextProps, nextState) {
+//якщо наступні пропси/стейти не однакові із тими які отримані компонентою, то метод їх змінює на нові
+  return nextProps !== this.props || nextState !== this.state 
+      }
+
+  render() {
